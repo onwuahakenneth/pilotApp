@@ -1,22 +1,26 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components';
 import {LinkItem} from './Link-item';
+import {useRouter} from 'next/router';
+import MenuContext from '../../context/MenuContext';
 
 interface Props{
 
 }
 
 export const NavLinks: React.FC<Props> = (props) => {
-
+    const {closeMenu} = useContext(MenuContext);
     return (
         <LinkList>
             <LinkItem 
                 href='/about'
                 title='About Us'
+                onClick={closeMenu}
             />
             <LinkItem 
                 href='/services'
                 title='Services'
+                onClick={closeMenu}
             />
         </LinkList>
     )

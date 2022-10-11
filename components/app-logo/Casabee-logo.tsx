@@ -1,13 +1,20 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
 import {GlobalStyles} from '../../constants'
 import {useRouter} from 'next/router'
+import MenuContext from '../../context/MenuContext'
 
 
 export const CasabeeLogo = () => {
   const router = useRouter();
+  const {closeMenu} = useContext(MenuContext);
+
+  const onClickHandler = () => {
+    router.push('/');
+    closeMenu();
+  }
   return (
-    <LogoContainer onClick={() => router.push('/')}>
+    <LogoContainer onClick={onClickHandler}>
         <BoldText>Casabee</BoldText>
     </LogoContainer>
   )

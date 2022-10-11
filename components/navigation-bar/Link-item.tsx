@@ -7,11 +7,17 @@ import {GlobalStyles} from '../../constants';
 interface Props {
     href: string;
     title: string;
+    onClick: () => void;
 }
 
 export const LinkItem: React.FC<Props> = (props) => {
-    const {href, title} = props;
+    const {href, title, onClick} = props;
     const router = useRouter();
+
+    const handleClick = () => {
+        router.push(href);
+        onClick();
+    }
     return (
         <LinkContainer onClick={() => router.push(href)}>
                 <LinkText>{title}</LinkText>

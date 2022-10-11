@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { GlobalStyles } from "../../constants";
 import Link from "next/link";
+import MenuContext from '../../context/MenuContext';
 
 interface Props {
   menuOpen: boolean;
@@ -9,16 +10,17 @@ interface Props {
 
 export const DropdownLinks: React.FC<Props> = (props) => {
   const { menuOpen } = props;
+  const {closeMenu} = useContext(MenuContext);
 
   return (
     <Container menuOpen={menuOpen}>
       <LinkList>
-        <LinkItem>
+        <LinkItem onClick={closeMenu}>
           <Link href={"/"}>
             <Text>About Us</Text>
           </Link>
         </LinkItem>
-        <LinkItem>
+        <LinkItem onClick={closeMenu}>
           <Link href={"/services"}>
             <Text>Services</Text>
           </Link>
