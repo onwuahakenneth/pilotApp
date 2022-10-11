@@ -30,6 +30,7 @@ export default Button
 const ButtonElement = styled.button<{bgColor?: string; padding?: string;}>`
     border: none;
     outline: none;
+    min-width: fit-content;
     background-color: ${GlobalStyles.colors.primary500};
     padding: 15px 25px;
     border-radius: 30px;
@@ -47,7 +48,7 @@ const Text = styled.p<{resizable?:boolean}>`
         
         @media screen and (max-width: 580px){
             
-            font-size: ${({resizable}) => resizable ? '65%' : '100%'};
+            font-size: ${({resizable}) => resizable ? '80%' : '100%'};
             padding: ${({resizable}) => resizable ? '0' : '15px 25px'};
         }
 

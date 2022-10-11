@@ -1,17 +1,16 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
 import {LinkItem} from './Link-item'
 import {Button} from '../../ui/button'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import {GlobalStyles} from '../../constants'
+import MenuContext from '../../context/MenuContext';
 
-interface Props{
-  menuToggeleHandler: () => void;
-  menuOpen: boolean;
-}
 
-export const NavigationActions: React.FC<Props> = (props) => {
-  const {menuToggeleHandler, menuOpen} = props;
+
+export const NavigationActions = () => {
+
+  const {open, toggleMenu} = useContext(MenuContext);
 
   return (
     <Container>
@@ -20,9 +19,9 @@ export const NavigationActions: React.FC<Props> = (props) => {
             title='Download App'
             resizable={true}
         />
-        <MenuBar onClick={menuToggeleHandler}>
+        <MenuBar onClick={toggleMenu}>
           {
-            menuOpen ? <FaTimes /> :     <FaBars />
+            open ? <FaTimes /> :     <FaBars />
           }
         </MenuBar>
     </Container>

@@ -1,26 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { NavLinks } from "./Navigation-links";
 import { CasabeeLogo } from "../app-logo";
 import { GlobalStyles } from "../../constants";
 import { NavigationActions, DropdownLinks } from "../navigation-bar";
+import {Modal} from '../../ui/modal';
+import MenuContext from '../../context/MenuContext';
 
 export const NavigationBar = () => {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const {open, closeMenu} = useContext(MenuContext);
 
-  const toggleMenu = () => setMenuOpen((currentState) => !currentState);
 
   return (
     <MainContainer>
+      {
+        open && <Modal onClick={closeMenu}/>
+      }
+      
       <NavContainer>
         <CasabeeLogo />
         <NavLinks />
         <NavigationActions
-          menuToggeleHandler={toggleMenu}
-          menuOpen={menuOpen}
         />
       </NavContainer>
-      <DropdownLinks menuOpen={menuOpen} />
+      <DropdownLinks menuOpen={open} />
     </MainContainer>
   );
 };

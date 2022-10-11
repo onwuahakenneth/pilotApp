@@ -1,13 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import {Layout} from '../components/layout';
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { Layout } from "../components/layout";
+import { MenuContextProvider } from "../context/MenuContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  ) 
+    <MenuContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </MenuContextProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

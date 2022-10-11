@@ -36,14 +36,6 @@ export const MenuContextProvider: React.FC<ProviderInterface> = ({children}) => 
         toggleMenu: toggleMenuHandler,
     };
 
-    useEffect(() => {
-        window.addEventListener('click', () => {
-            if(!menuOpen){
-                setMenuOpen(false);
-            }
-        })
-    }, [menuOpen])
-
   return (
     <MenuContext.Provider value={value}>
             {children};

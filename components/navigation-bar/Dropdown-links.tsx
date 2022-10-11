@@ -35,7 +35,7 @@ const Container = styled.div<{ menuOpen: boolean }>`
   top: 0px;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 9;
   display: none;
   transform: translateY(0%);
   background-color: ${GlobalStyles.colors.primary500};
@@ -68,6 +68,6 @@ const LinkItem = styled.div`
 `;
 
 const Text = styled.p`
-  color: ${GlobalStyles.colors.offWhite};
+  color: ${GlobalStyles.colors.white};
   transition: all 0.5s linear;
 `;
