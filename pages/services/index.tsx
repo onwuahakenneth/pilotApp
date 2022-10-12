@@ -3,7 +3,6 @@ import Head from "next/head";
 import styled from "styled-components";
 import { GlobalStyles } from "../../constants";
 import { Card } from "../../ui/card";
-import { motion } from "framer-motion";
 
 const ServicesPage: NextPage = () => {
   return (
