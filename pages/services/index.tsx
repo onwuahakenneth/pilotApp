@@ -80,34 +80,6 @@ const ServicesPage: NextPage = () => {
               </ItemContent>
             </ItemContainer>
           </Card>
-
-          {/* <Card>
-            <ItemContainer>
-              <TitleContainer>
-                  <TitleText>Service charge & utility charge billing</TitleText>
-              </TitleContainer>
-              <ItemContent>
-                <Text>
-                Everything you need to effectively schedule, apportion, invoice and receive 
-                service charge & utility payments with ease
-                </Text>
-              </ItemContent>
-            </ItemContainer>
-          </Card>
-
-          <Card>
-            <ItemContainer>
-              <TitleContainer>
-                  <TitleText>Bulk notification</TitleText>
-              </TitleContainer>
-              <ItemContent>
-                <Text>
-                Quickly send bulk notifications & alerts via SMS and email to registered 
-                facility users and other stakeholders
-                </Text>
-              </ItemContent>
-            </ItemContainer>
-          </Card> */}
         </ServicesContianer>
       </ContentContainer>
 
